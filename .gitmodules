@@ -1,3 +1,4 @@
 [submodule "ft"]
 	path = ft
+	branch = main
 	url = https://github.com/GrolschSec/Libft.git
