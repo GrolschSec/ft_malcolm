@@ -6,7 +6,7 @@
 #    By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/19 22:19:46 by rlouvrie          #+#    #+#              #
-#    Updated: 2024/09/20 17:45:21 by rlouvrie         ###   ########.fr        #
+#    Updated: 2024/09/21 15:38:22 by rlouvrie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,14 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRC_DIR = src
 
-SRC = main.c
+SRC = main.c \
+		error.c \
+		parsing.c \
+		parsing_ip.c \
+		parsing_mac.c \
+		signal.c \
+		free.c \
+		string.c
 
 OBJ_DIR = obj
 

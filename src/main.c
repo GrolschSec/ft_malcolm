@@ -6,11 +6,11 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 22:32:20 by rlouvrie          #+#    #+#             */
-/*   Updated: 2024/09/20 17:38:23 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2024/09/21 17:26:17 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../include/ft_malcolm.h"
+#include "../include/ft_malcolm.h"
 
 /*
     - Parsing for IPv4 Address
@@ -39,11 +39,25 @@
         - Sent ARP reply, you may now check the target's arp table.
     - Bonus:
         - Verbose mode: show the packets.
-        - Hostname resolution
 */
 
-int		main(int argc, char **argv)
+/*
+	// Check number of arguments
+	// Signal handling
+	// Parse arguments
+	// Optionnal: Validity of arguments
+	// Main program flow
+*/
+int	main(int argc, char *argv[])
 {
-    if (argc != 5)
-    return (0);
+	t_args				args;
+
+	(void)argv;
+	// Make a reusable sigaction function to pass a struct
+	signal(SIGINT, ft_sigint_handler);
+	ft_bzero(&args, sizeof(t_args));
+	if (argc < 5 || argc > 6)
+		return (ft_error("invalid number of arguments.", NULL, 1, 0), 1);
+	ft_parse_args(argc, argv, &args);
+	return (0);
 }
