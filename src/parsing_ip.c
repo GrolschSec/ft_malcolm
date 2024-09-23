@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 13:17:41 by rlouvrie          #+#    #+#             */
-/*   Updated: 2024/09/21 15:50:02 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2024/09/23 11:37:14 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	ft_is_ipv4(char *ip, t_args *args)
 	while (i < 4)
 		if (!ft_verify_byte(args->tmp[i++]))
 			return (0);
+	ft_free_tab(args->tmp);
+	args->tmp = NULL;
 	return (1);
 }
 

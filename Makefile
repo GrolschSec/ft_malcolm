@@ -6,7 +6,7 @@
 #    By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/19 22:19:46 by rlouvrie          #+#    #+#              #
-#    Updated: 2024/09/21 15:38:22 by rlouvrie         ###   ########.fr        #
+#    Updated: 2024/09/23 11:51:55 by rlouvrie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRC = main.c \
 		parsing_mac.c \
 		signal.c \
 		free.c \
+		info.c \
 		string.c
 
 OBJ_DIR = obj
@@ -60,4 +61,10 @@ fclean: clean
 	@echo "Removing $(NAME)"
 	@rm -f $(NAME)
 
-.PHONY: all clean fclean
+re: fclean all
+
+debug:
+	@echo "Compiling with debug flags"
+	@$(MAKE) re CFLAGS="-g"
+
+.PHONY: all clean fclean re debug
