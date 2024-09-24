@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 13:17:58 by rlouvrie          #+#    #+#             */
-/*   Updated: 2024/09/23 12:20:33 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2024/09/24 15:10:02 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ int	ft_is_mac(char *mac, t_args *args)
 	while (i < 6)
 		if (!ft_verify_mac_byte(args->tmp[i++]))
 			return (0);
-	ft_free_tab(args->tmp);
-	args->tmp = NULL;
 	return (1);
 }
 

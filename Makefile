@@ -6,7 +6,7 @@
 #    By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/19 22:19:46 by rlouvrie          #+#    #+#              #
-#    Updated: 2024/09/23 11:51:55 by rlouvrie         ###   ########.fr        #
+#    Updated: 2024/09/23 16:55:52 by rlouvrie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SRC = main.c \
 		signal.c \
 		free.c \
 		info.c \
-		string.c
+		string.c \
+		net_utils.c
 
 OBJ_DIR = obj
 

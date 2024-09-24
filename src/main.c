@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 22:32:20 by rlouvrie          #+#    #+#             */
-/*   Updated: 2024/09/23 11:55:12 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2024/09/24 15:11:50 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ t_args	g_args;
         - destination ip
         - destination mac
     - Error handling: 
-        - Invalid IP or Unknown host
-        - Invalid MAC
-        - Invalid number of arguments
+        - Invalid IP or Unknown host: ok
+        - Invalid MAC: ok
+        - Invalid number of arguments: ok
     - Signal handling:
-        - SIGINT (Clean up and exit)
+        - SIGINT (Clean up and exit): ok
     - Program flow:
         - Detect
         - Reply
@@ -43,13 +43,6 @@ t_args	g_args;
         - Verbose mode: show the packets.
 */
 
-/*
-	// Check number of arguments: Ok
-	// Signal handling: Ok
-	// Parse arguments
-	// Optionnal: Validity of arguments(specifically for ip addresses)
-	// Main program flow
-*/
 int	main(int argc, char *argv[])
 {
 	ft_bzero(&g_args, sizeof(t_args));

@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   net_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 15:13:28 by rlouvrie          #+#    #+#             */
-/*   Updated: 2024/09/23 19:17:21 by rlouvrie         ###   ########.fr       */
+/*   Created: 2024/09/23 16:55:24 by rlouvrie          #+#    #+#             */
+/*   Updated: 2024/09/24 15:09:40 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_malcolm.h"
 
-void	ft_free_all(t_args *args)
+void	ft_get_interfaces(t_args *args)
 {
-	if (args->tmp)
-		ft_free_tab(args->tmp);
-	if (args->iface)
-		freeifaddrs(args->iface);
-	if (args->iface_name)
-		free(args->iface_name);
-}
-
-void	ft_free_tab(char **tab)
-{
-	int	i;
-
-	i = 0;
-	while (tab[i])
-		if (tab[i])
-			free(tab[i++]);
-	if (tab)
-		free(tab);
+	if (getifaddrs(&args->iface) < 0)
+		return (
+			ft_free_all(args),
+			ft_error("failed to get interfaces list.", NULL, 0, 1)
+		);
 }

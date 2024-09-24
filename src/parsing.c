@@ -6,18 +6,13 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 18:57:10 by rlouvrie          #+#    #+#             */
-/*   Updated: 2024/09/23 12:05:51 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2024/09/24 15:10:23 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_malcolm.h"
 
 void	ft_parse_args(int argc, char *argv[], t_args *args)
-{
-	ft_set_args_in_struct(argc, argv, args);
-}
-
-void	ft_set_args_in_struct(int argc, char *argv[], t_args *args)
 {
 	if (ft_is_ipv4(argv[1], args))
 		args->src_ip = argv[1];
@@ -28,7 +23,7 @@ void	ft_set_args_in_struct(int argc, char *argv[], t_args *args)
 	else
 		return (ft_free_all(args), ft_error("invalid source mac.", NULL, 1, 1));
 	if (ft_is_ipv4(argv[3], args))
-		args->src_ip = argv[3];
+		args->dst_ip = argv[3];
 	else
 		return (ft_free_all(args), ft_error("invalid dest ip.", NULL, 1, 1));
 	if (ft_is_mac(argv[4], args))
